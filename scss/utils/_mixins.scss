@@ -1,7 +1,0 @@
-// scss/utils/_mixins.scss
-@mixin respond($breakpoint) {
-  @if $breakpoint == phone {
-    @media only screen and (max-width: 600px) { @content };
-  }
-  // Додайте інші міксини тут
-}
