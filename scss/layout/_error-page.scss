@@ -1,0 +1,118 @@
+/* ============= 404 PAGE (like your Figma mock) ============= */
+
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f3f3; /* сірий фон як у макеті */
+  overflow: hidden;
+}
+
+/* Повноекранний контейнер, щоб картка була строго по центру */
+.error-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Декоративне "Oops!" зліва, під кутом */
+.error-oops {
+  position: absolute;
+  left: 18%;                /* тепер позиція залежить від ширини екрана */
+  top: 9%;                 /* відступ зверху теж у % */
+  transform: rotate(-28deg);
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(30px, 5vw, 64px);
+  color: #b0c4de;           /* сіро-блакитний */
+  text-transform: uppercase;
+  z-index: 10;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Біла картка з ілюстрацією-дзвіночком */
+.error-box {
+  position: relative;
+  width: min(920px, 92vw);
+  min-height: min(560px, 70vh);
+  padding: 70px 40px 100px; /* трохи більше зверху, щоб було місце під "Oops!" */
+  background: #fff url("https://i.pinimg.com/736x/f6/1a/07/f61a07bae4f75262600cb38c22ae0b8b.jpg")
+              center 4% no-repeat;
+  background-size: 64%;
+  border-radius: 28px;
+  box-shadow: 0 24px 48px rgba(25, 28, 35, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Величезний 404 */
+.error-code {
+  margin: 0 0 10px;
+  line-height: 1;
+  font-weight: 900;
+  font-size: clamp(68px, 12vw, 120px); /* трохи менше */
+  color: #6440bed9; /* лавандовий */
+}
+
+/* Двохрядковий компактний текст */
+.error-message {
+  margin: 0 auto 50px;
+  max-width: 400px;           /* трохи вужче, щоб зберігати дворядковість */
+  font-size: clamp(12px, 1.2vw, 15px); /* менший шрифт */
+  line-height: 1.4;
+  color: #333;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* Кнопка */
+.btn {
+  display: inline-block;
+  padding: 16px 34px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  background: #6d42d9;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(109, 66, 217, 0.25);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  position: relative;
+  top: 12px; /* легкий зсув вниз */
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Мобільна адаптація */
+@media (max-width: 1024px) {
+  .error-oops {
+    left: 24%;              /* трохи ближче до центру на середніх екранах */
+    top: 20%;
+    font-size: clamp(26px, 5vw, 54px);
+  }
+}
+
+@media (max-width: 768px) {
+  .error-oops {
+    left: 20%;              /* ближче до центру на мобільних */
+    top: 22%;
+    font-size: clamp(22px, 6vw, 46px);
+    transform: rotate(-26deg);
+  }
+}
